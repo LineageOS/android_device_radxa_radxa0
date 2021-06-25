@@ -8,6 +8,14 @@ DEVICE_PATH := device/radxa/radxa0
 
 $(call inherit-product, device/amlogic/g12-common/g12.mk)
 
+## Bluetooth
+PRODUCT_PACKAGES += \
+    libbt-vendor
+
 ## Kernel Modules
 PRODUCT_PACKAGES += \
     dhd
+
+## Overlays
+DEVICE_PACKAGE_OVERLAYS += \
+    $(DEVICE_PATH)/overlay
