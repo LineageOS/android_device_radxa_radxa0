@@ -7,3 +7,7 @@
 DEVICE_PATH := device/radxa/radxa0
 
 $(call inherit-product, device/amlogic/g12-common/g12.mk)
+
+## Kernel Modules
+PRODUCT_PACKAGES += \
+    dhd
