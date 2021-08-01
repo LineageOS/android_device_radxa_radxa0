@@ -35,10 +35,12 @@ NEEDED_IMAGES := \
 
 $(INSTALLED_AML_UPGRADE_PACKAGE_TARGET): $(addprefix $(PRODUCT_OUT)/,$(NEEDED_IMAGES)) $(AML_IMAGE_TOOL)
 	$(hide) mkdir -p $(PRODUCT_UPGRADE_OUT)
-ifeq ("$(wildcard $(FACTORY_PATH)/u-boot.bin)","")
-	$(error "no u-boot.bin found in $(FACTORY_PATH)")
-else
+ifneq ("$(wildcard $(FACTORY_PATH)/u-boot.bin)","")
 	$(hide) $(call aml-symlink-file, $(FACTORY_PATH)/u-boot.bin)
+else ifneq ("$(wildcard vendor/firmware/radxa0/bootloader.img)","")
+	$(hide) $(call aml-symlink-file, vendor/firmware/radxa0/bootloader.img, u-boot.bin)
+else
+	$(error "no u-boot.bin found in $(FACTORY_PATH)")
 endif
 	$(hide) $(call aml-symlink-file, $(PRODUCT_OUT)/logo.img)
 	$(hide) $(call aml-symlink-file, $(FACTORY_PATH)/aml_sdc_burn.ini)
