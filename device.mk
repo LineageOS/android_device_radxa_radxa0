@@ -28,4 +28,6 @@ PRODUCT_PACKAGES += \
 DEVICE_PACKAGE_OVERLAYS += \
     $(DEVICE_PATH)/overlay
 
+# Wi-Fi
+TARGET_DHD_VERSION := bcmdhd.100.10.545.x
 include hardware/amlogic/kernel-modules/dhd-driver/firmware/firmware.mk
