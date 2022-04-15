@@ -4,6 +4,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+## Bluetooth
+bluetooth.device.default_name=Radxa Zero
+
 # Dolby
 ro.vendor.platform.support.dolbyvision=false
 vendor.media.support.dolbyvision=false
