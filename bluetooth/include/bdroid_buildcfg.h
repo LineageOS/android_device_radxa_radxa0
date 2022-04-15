@@ -7,8 +7,6 @@
 #ifndef _BDROID_BUILDCFG_H
 #define _BDROID_BUILDCFG_H
 
-#define BTM_DEF_LOCAL_NAME "Radxa Zero"
-
 #define BLE_VND_INCLUDED TRUE
 
 #define BTM_BLE_CONN_INT_MIN_DEF     0x18
