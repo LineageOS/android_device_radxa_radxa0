@@ -7,3 +7,6 @@
 # Dolby
 ro.vendor.platform.support.dolbyvision=false
 vendor.media.support.dolbyvision=false
+
+## SOC
+ro.soc.model=AMLS905X2
