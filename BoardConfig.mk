@@ -20,6 +20,9 @@ TARGET_BOOTLOADER_BOARD_NAME := radxa0
 ## DTB
 TARGET_DTB_NAME := g12a_s905y2_radxa0
 
+## Properties
+TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
+
 ## Wi-Fi
 BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_bcmdhd
 BOARD_WLAN_DEVICE := bcmdhd
