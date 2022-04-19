@@ -6,3 +6,4 @@
 
 # Dolby
 ro.vendor.platform.support.dolbyvision=false
+vendor.media.support.dolbyvision=false
