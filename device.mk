@@ -4,8 +4,6 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-$(call inherit-product, device/amlogic/g12-common/g12.mk)
-
 ## Bluetooth
 PRODUCT_PACKAGES += \
     libbt-vendor
@@ -28,4 +26,9 @@ DEVICE_PACKAGE_OVERLAYS += \
 
 # Wi-Fi
 TARGET_DHD_VERSION := bcmdhd.100.10.545.x
+
+# Wi-Fi Firmware
 include hardware/amlogic/kernel-modules/dhd-driver/firmware/firmware.mk
+
+## Inherit from the common tree product makefile
+$(call inherit-product, device/amlogic/g12-common/g12.mk)
