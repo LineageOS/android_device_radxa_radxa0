@@ -4,8 +4,6 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-include device/amlogic/g12-common/BoardConfigCommon.mk
-
 DEVICE_PATH := device/radxa/radxa0
 
 ## Bluetooth
@@ -32,3 +30,6 @@ WIFI_DRIVER_FW_PATH_AP := "/vendor/etc/wifi/buildin/fw_fw_bcm4356a2_ag_apsta.bin
 WIFI_DRIVER_FW_PATH_STA := "/vendor/etc/wifi/buildin/fw_bcm4356a2_ag.bin"
 WIFI_DRIVER_FW_PATH_PARAM := "/sys/module/dhd/parameters/firmware_path"
 WPA_SUPPLICANT_VERSION := VER_0_8_X
+
+## Common Tree
+include device/amlogic/g12-common/BoardConfigCommon.mk
