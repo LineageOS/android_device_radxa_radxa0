@@ -6,6 +6,5 @@
 runtime_resource_overlay {
     name: "BluetoothOverlayTarget",
     resource_dirs: ["res"],
-    sdk_version: "current",
     proprietary: true
 }
