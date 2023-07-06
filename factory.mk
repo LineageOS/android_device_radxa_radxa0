@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2021 The LineageOS Project
+# Copyright (C) 2021-2023 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -31,7 +31,8 @@ NEEDED_IMAGES := \
     recovery.img \
     dtbo.img \
     vbmeta.img \
-    super.img
+    super.img \
+    logo.img
 
 $(INSTALLED_AML_UPGRADE_PACKAGE_TARGET): $(addprefix $(PRODUCT_OUT)/,$(NEEDED_IMAGES)) $(ACP) $(AML_IMAGE_TOOL)
 	$(hide) mkdir -p $(PRODUCT_UPGRADE_OUT)
