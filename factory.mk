@@ -31,15 +31,15 @@ NEEDED_IMAGES := \
     recovery.img \
     dtbo.img \
     vbmeta.img \
-    super.img \
+    super_empty.img \
     logo.img
 
 $(INSTALLED_AML_UPGRADE_PACKAGE_TARGET): $(addprefix $(PRODUCT_OUT)/,$(NEEDED_IMAGES)) $(ACP) $(AML_IMAGE_TOOL)
 	$(hide) mkdir -p $(PRODUCT_UPGRADE_OUT)
 ifneq ("$(wildcard $(FACTORY_PATH)/u-boot.bin)","")
 	$(hide) $(call aml-copy-file, $(FACTORY_PATH)/u-boot.bin)
-else ifneq ("$(wildcard vendor/amlogic/radxa0/radio/bootloader.img)","")
-	$(hide) $(call aml-copy-file, vendor/amlogic/radxa0/radio/bootloader.img, u-boot.bin)
+else ifneq ("$(wildcard vendor/amlogic/radxa0/radio/bootloader-recovery.img)","")
+	$(hide) $(call aml-copy-file, vendor/amlogic/radxa0/radio/bootloader-recovery.img, u-boot.bin)
 else
 	$(error "no u-boot.bin found in $(FACTORY_PATH)")
 endif
@@ -51,7 +51,7 @@ endif
 	$(hide) $(call aml-copy-file, $(PRODUCT_OUT)/recovery.img)
 	$(hide) $(call aml-copy-file, $(INSTALLED_2NDBOOTLOADER_TARGET), dtb.img)
 	$(hide) $(call aml-copy-file, $(PRODUCT_OUT)/dtbo.img)
-	$(hide) $(call aml-copy-file, $(PRODUCT_OUT)/super.img)
+	$(hide) $(call aml-copy-file, $(PRODUCT_OUT)/super_empty.img, super.img)
 	$(hide) $(call aml-copy-file, $(PRODUCT_OUT)/vbmeta.img)
 	$(hide) $(AML_IMAGE_TOOL) -r $(PACKAGE_CONFIG_FILE) $(PRODUCT_UPGRADE_OUT)/ $@
 	$(hide) rm -rf $(PRODUCT_UPGRADE_OUT)
