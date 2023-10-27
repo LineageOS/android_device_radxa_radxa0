@@ -6,6 +6,7 @@
 
 ## Bluetooth
 PRODUCT_PACKAGES += \
+    RadxaZeroBluetoothOverlay \
     libbt-vendor
 
 ## Factory
@@ -19,10 +20,6 @@ PRODUCT_COPY_FILES += \
 ## Kernel Modules
 PRODUCT_PACKAGES += \
     dhd
-
-## Overlays
-DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay
 
 ## TEE
 TARGET_HAS_TEE := false
