@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d2d2b23f_b34f3969",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2023-10-27T17:18:35Z",
+      "side": 1,
+      "message": "Tested on deadpool:\n\nIDMAP OF com.android.bluetooth.deadpool\nPaths:\ntarget path : /apex/com.android.btservices/app/Bluetooth@UP1A.231005.007/Bluetooth.apk\noverlay path : /vendor/overlay/DeadpoolBluetoothOverlay.apk\nDebug info:\nW failed to find resource \u0027bool/profile_supported_hdp\u0027\nW failed to find resource \u0027bool/profile_supported_hs_hfp\u0027\nW failed to find resource \u0027bool/profile_supported_opp\u0027\nW failed to find resource \u0027bool/profile_supported_pbap\u0027\nMapping:\n0x7f02000a -\u003e 0x7f010000 (bool/enable_phone_policy -\u003e bool/enable_phone_policy)\n0x7f02000e -\u003e 0x7f010001 (bool/pbap_include_photos_in_vcard -\u003e bool/pbap_include_photos_in_vcard)",
+      "revId": "31665dd40cfec6ad9653a98aaa99fedacd0b483f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
