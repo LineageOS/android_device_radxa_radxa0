@@ -16,6 +16,24 @@
       "message": "torn on this one, I merged this on odroidc4/m5 as BT is _optional_ on those - BUT on this device BT is always present.\n\nThe use case I can see being pertinent is users who use USB remotes or keyboards (more likely on a devout?).\n\nThoughts Bruno?",
       "revId": "105be500ab0a7ff6a8545f64f9dbfc45c862e12f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "abc2cfcb_ec2b7d72",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2024-01-17T04:35:03Z",
+      "side": 1,
+      "message": "pertinent note: Users CANNOT currently skip the ATV SetupWraith pairing animation without pairing a remote.",
+      "parentUuid": "5bc0f3f9_33e5828c",
+      "revId": "105be500ab0a7ff6a8545f64f9dbfc45c862e12f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
