@@ -22,6 +22,7 @@ TARGET_DTB_NAME := g12a_s905y2_radxa0
 BOARD_SUPER_PARTITION_SIZE := 2084569088
 
 ## Properties
+TARGET_SYSTEM_EXT_PROP += $(DEVICE_PATH)/system_ext.prop
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
 ## Wi-Fi
