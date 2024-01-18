@@ -51,6 +51,24 @@
       "message": "works, and button still allows pairing.",
       "revId": "105be500ab0a7ff6a8545f64f9dbfc45c862e12f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bb3f5081_551d6bdc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2024-01-18T09:24:12Z",
+      "side": 1,
+      "message": "I have no opinion on this one. Not that it hurts in case of this prop, but note that _tab builds inherit from this BoardConfig.mk and therefore will include this too.",
+      "parentUuid": "56e45c2a_bc17a18a",
+      "revId": "105be500ab0a7ff6a8545f64f9dbfc45c862e12f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
