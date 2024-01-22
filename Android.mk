@@ -11,4 +11,6 @@ include $(call all-makefiles-under,$(LOCAL_PATH))
 
 include $(LOCAL_PATH)/factory.mk
 
+-include vendor/amlogic/odroidc4/firmware.mk
+
 endif
