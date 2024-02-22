@@ -1,2 +1,2 @@
 on boot
-    insmod /vendor/lib/modules/dhd.ko firmware_path=/vendor/etc/wifi/buildin/ nvram_path=/vendor/etc/wifi/buildin/
+    insmod /vendor/lib/modules/dhd.ko nvram_path=/vendor/etc/wifi/buildin/nvram_ap6256.txt
