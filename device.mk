@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2021-2023 The LineageOS Project
+# Copyright (C) 2021-2024 The LineageOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -23,9 +23,6 @@ PRODUCT_PACKAGES += \
 
 ## TEE
 TARGET_HAS_TEE := false
-
-# Wi-Fi
-TARGET_DHD_VERSION := bcmdhd.100.10.545.x
 
 # Wi-Fi Firmware
 include hardware/amlogic/kernel-modules/dhd-driver/firmware/firmware.mk
