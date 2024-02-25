@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2021-2023 The LineageOS Project
+# Copyright (C) 2021-2024 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -37,7 +37,6 @@ UPGRADE_IMAGES := \
     boot.img \
     recovery.img \
     dtbo.img \
-    vbmeta.img \
     super.img \
     super_empty.img \
     logo.img
@@ -46,7 +45,6 @@ INSTALL_IMAGES := \
     boot.img \
     recovery.img \
     dtbo.img \
-    vbmeta.img \
     super.img \
     super_empty.img \
     logo.img \
@@ -70,7 +68,6 @@ endif
 	$(hide) $(call aml-copy-install-file, $(INSTALLED_2NDBOOTLOADER_TARGET), dtb.img)
 	$(hide) $(call aml-copy-install-file, $(PRODUCT_OUT)/dtbo.img)
 	$(hide) $(call aml-copy-install-file, $(PRODUCT_OUT)/super_empty.img, super.img)
-	$(hide) $(call aml-copy-install-file, $(PRODUCT_OUT)/vbmeta.img)
 	$(hide) $(call aml-copy-install-file, $(PRODUCT_OUT)/misc.img)
 	$(hide) $(AML_IMAGE_TOOL) -r  $(PRODUCT_INSTALL_OUT)/image.cfg $(PRODUCT_INSTALL_OUT)/ $@
 	$(hide) rm -rf $(PRODUCT_INSTALL_OUT)
@@ -97,7 +94,6 @@ endif
 	$(hide) $(call aml-copy-upgrade-file, $(INSTALLED_2NDBOOTLOADER_TARGET), dtb.img)
 	$(hide) $(call aml-copy-upgrade-file, $(PRODUCT_OUT)/dtbo.img)
 	$(hide) $(call aml-copy-upgrade-file, $(PRODUCT_OUT)/super.img)
-	$(hide) $(call aml-copy-upgrade-file, $(PRODUCT_OUT)/vbmeta.img)
 	$(hide) $(AML_IMAGE_TOOL) -r  $(PRODUCT_UPGRADE_OUT)/image.cfg $(PRODUCT_UPGRADE_OUT)/ $@
 	$(hide) rm -rf $(PRODUCT_UPGRADE_OUT)
 	$(hide) echo " $@ created"
