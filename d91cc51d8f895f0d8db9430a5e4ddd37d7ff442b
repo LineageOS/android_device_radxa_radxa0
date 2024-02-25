@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "405c358e_f60eeca5",
+        "filename": "factory/image_install.cfg",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2024-02-25T21:55:35Z",
+      "side": 0,
+      "message": "Wrong partition?",
+      "revId": "d91cc51d8f895f0d8db9430a5e4ddd37d7ff442b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
