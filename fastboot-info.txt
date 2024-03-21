@@ -1,0 +1,14 @@
+version 1
+flash boot
+flash dtbo
+flash dtb dtb.img
+flash --apply-vbmeta vbmeta
+flash recovery
+flash odm
+flash product
+flash system
+flash system_ext
+flash vendor
+flash vendor_dlkm
+if-wipe erase cache
+if-wipe erase userdata

@@ -16,6 +16,9 @@ include kernel/amlogic/kernel-modules/dhd-driver/firmware/bluetooth/bluetooth.mk
 PRODUCT_HOST_PACKAGES += \
     aml_image_packer
 
+## Fastboot
+TARGET_BOARD_FASTBOOT_INFO_FILE := $(LOCAL_PATH)/fastboot-info.txt
+
 ## Init-Files
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init-files/init.amlogic.wifi_buildin.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.amlogic.wifi_buildin.rc
