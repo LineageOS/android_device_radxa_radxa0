@@ -16,7 +16,9 @@ set -e
 
 export DEVICE=radxa0
 export DEVICE_COMMON=g12-common
-export VENDOR=radxa
+export TARGET_SOC=g12a
+export VENDOR=amlogic
+export VENDOR_BRAND=radxa
 export VENDOR_COMMON=amlogic
 
 "./../../${VENDOR_COMMON}/${DEVICE_COMMON}/extract-files.sh" "$@"
