@@ -11,6 +11,8 @@ include $(call all-makefiles-under,$(LOCAL_PATH))
 
 include $(LOCAL_PATH)/factory.mk
 
--include vendor/amlogic/radxa0/firmware.mk
+RADIO_FILES := $(wildcard $(LOCAL_PATH)/radio/*)
+$(foreach f, $(notdir $(RADIO_FILES)), \
+    $(call add-radio-file,radio/$(f)))
 
 endif
