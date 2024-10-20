@@ -54,14 +54,12 @@ INSTALL_IMAGES := \
 
 $(INSTALLED_AML_INSTALL_PACKAGE_TARGET): $(addprefix $(PRODUCT_OUT)/,$(INSTALL_IMAGES)) $(ACP) $(AML_IMAGE_TOOL)
 	$(hide) mkdir -p $(PRODUCT_INSTALL_OUT)
-ifneq ("$(wildcard $(FACTORY_PATH)/u-boot.bin)","")
-	$(hide) $(call aml-copy-install-file, $(FACTORY_PATH)/u-boot.bin)
+ifneq ("$(wildcard $(FACTORY_PATH)/bootfiles/bootloader.img)","")
+	$(hide) $(call aml-copy-install-file, $(FACTORY_PATH)/bootfiles/bootloader.img, u-boot.bin)
 else ifeq ($(WITH_CONSOLE_BL),true)
-	$(hide) $(call aml-copy-install-file, vendor/amlogic/radxa0/radio/bootloader-console.img, u-boot.bin)
-else ifneq ("$(wildcard vendor/amlogic/radxa0/radio/bootloader.img)","")
-	$(hide) $(call aml-copy-install-file, vendor/amlogic/radxa0/radio/bootloader.img, u-boot.bin)
+	$(hide) $(call aml-copy-install-file, $(FACTORY_PATH)/bootfiles/bootloader-console.img, u-boot.bin)
 else
-	$(error "no u-boot.bin found in $(FACTORY_PATH)")
+	$(error "no bootloader.img found in $(FACTORY_PATH)/bootfiles")
 endif
 	$(hide) $(call aml-copy-install-file, $(PRODUCT_OUT)/logo.img)
 	$(hide) $(call aml-copy-install-file, $(FACTORY_PATH)/aml_sdc_burn.ini)
@@ -85,14 +83,12 @@ INSTALLED_RADIOIMAGE_TARGET += $(INSTALLED_AML_INSTALL_PACKAGE_TARGET)
 
 $(INSTALLED_AML_UPGRADE_PACKAGE_TARGET): $(addprefix $(PRODUCT_OUT)/,$(UPGRADE_IMAGES)) $(ACP) $(AML_IMAGE_TOOL)
 	$(hide) mkdir -p $(PRODUCT_UPGRADE_OUT)
-ifneq ("$(wildcard $(FACTORY_PATH)/u-boot.bin)","")
-	$(hide) $(call aml-copy-upgrade-file, $(FACTORY_PATH)/u-boot.bin)
+ifneq ("$(wildcard $(FACTORY_PATH)/bootfiles/bootloader.img)","")
+	$(hide) $(call aml-copy-upgrade-file, $(FACTORY_PATH)/bootfiles/bootloader.img, u-boot.bin)
 else ifeq ($(WITH_CONSOLE_BL),true)
-	$(hide) $(call aml-copy-install-file, vendor/amlogic/radxa0/radio/bootloader-console.img, u-boot.bin)
-else ifneq ("$(wildcard vendor/amlogic/radxa0/radio/bootloader.img)","")
-	$(hide) $(call aml-copy-upgrade-file, vendor/amlogic/radxa0/radio/bootloader.img, u-boot.bin)
+	$(hide) $(call aml-copy-install-file, $(FACTORY_PATH)/bootfiles/bootloader-console.img, u-boot.bin)
 else
-	$(error "no u-boot.bin found in $(FACTORY_PATH)")
+	$(error "no bootloader.img found in $(FACTORY_PATH)/bootfiles")
 endif
 	$(hide) $(call aml-copy-upgrade-file, $(PRODUCT_OUT)/logo.img)
 	$(hide) $(call aml-copy-upgrade-file, $(FACTORY_PATH)/aml_sdc_burn.ini)

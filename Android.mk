@@ -9,8 +9,10 @@ ifneq ($(filter radxa0 radxa0_car radxa0_tab, $(TARGET_DEVICE)),)
 LOCAL_PATH := $(call my-dir)
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
-include $(LOCAL_PATH)/factory.mk
+RADIO_FILES := $(wildcard $(LOCAL_PATH)/factory/boot-files/*)
+$(foreach f, $(notdir $(RADIO_FILES)), \
+    $(call add-radio-file,factory/boot-files/$(f)))
 
--include vendor/amlogic/radxa0/firmware.mk
+include $(LOCAL_PATH)/factory.mk
 
 endif
