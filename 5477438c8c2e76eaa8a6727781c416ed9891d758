@@ -22,6 +22,30 @@
       },
       "revId": "5477438c8c2e76eaa8a6727781c416ed9891d758",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ff6a0ca7_f79a19cf",
+        "filename": "lineage_radxa0.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2024-10-24T18:56:03Z",
+      "side": 1,
+      "message": "Because I talked to mike about the proper way to do it, and he linked me this: https://review.lineageos.org/c/LineageOS/android_device_motorola_devon/+/406250/1/lineage_devon.mk#28\n\nIt does the same thing effectively. It being set to adt-3 is a reasonable question, that may be worth swapping to radxa0. Lmk if that\u0027s the route you\u0027d like to go.\n\nI did this for parity, and system name makes it reflect the proper target.",
+      "parentUuid": "f5f5dbd3_3ec891ce",
+      "range": {
+        "startLine": 31,
+        "startChar": 18,
+        "endLine": 31,
+        "endChar": 22
+      },
+      "revId": "5477438c8c2e76eaa8a6727781c416ed9891d758",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ],
   "submitRequirementResults": []
