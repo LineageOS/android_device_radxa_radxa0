@@ -16,6 +16,19 @@
 
 FACTORY_PATH := device/radxa/radxa0/factory
 
+RADIO_IMAGES += \
+    $(FACTORY_PATH)/bootfiles/bootloader.img \
+    $(FACTORY_PATH)/bootfiles/bootloader-console.img \
+    $(FACTORY_PATH)/bootfiles/bootloader-recovery.img \
+    $(FACTORY_PATH)/bootfiles/misc.img
+
+$(INSTALLED_AML_RADIO_IMAGES): $(RADIO_IMAGES) $(ACP)
+    $(foreach f, $(RADIO_FILES), \
+        $(shell mkdir -p $(call intermediates-dir-for,PACKAGING,target_files)/$(TARGET_PRODUCT)-target_files/RADIO/) \
+        $(shell $(hide) $(ACP) $(f) $(call intermediates-dir-for,PACKAGING,target_files)/$(TARGET_PRODUCT)-target_files/RADIO/$(strip $(notdir $(f)))))
+
+$(INSTALLED_2NDBOOTLOADER_TARGET): $(INSTALLED_AML_RADIO_IMAGES)
+
 PRODUCT_INSTALL_OUT := $(PRODUCT_OUT)/aml_install
 PRODUCT_UPGRADE_OUT := $(PRODUCT_OUT)/aml_upgrade
 INSTALL_PACKAGE_CONFIG_FILE := $(PRODUCT_INSTALL_OUT)/image_install.cfg
@@ -106,3 +119,5 @@ endif
 
 .PHONY: aml_upgrade
 aml_upgrade: $(INSTALLED_AML_UPGRADE_PACKAGE_TARGET)
+
+INSTALLED_RADIOIMAGE_TARGET += $(RADIO_IMAGES)
