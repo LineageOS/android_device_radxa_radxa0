@@ -14,6 +14,8 @@
 # limitations under the License.
 #
 
+ifneq ($(filter radxa0 radxa0_car radxa0_tab,$(TARGET_DEVICE)),)
+
 FACTORY_PATH := device/radxa/radxa0/factory
 
 PRODUCT_INSTALL_OUT := $(PRODUCT_OUT)/aml_install
@@ -111,3 +113,5 @@ INSTALLED_RADIOIMAGE_TARGET += $(FACTORY_PATH)/bootfiles/bootloader.img
 INSTALLED_RADIOIMAGE_TARGET += $(FACTORY_PATH)/bootfiles/bootloader-console.img
 INSTALLED_RADIOIMAGE_TARGET += $(FACTORY_PATH)/bootfiles/bootloader-recovery.img
 INSTALLED_RADIOIMAGE_TARGET += $(FACTORY_PATH)/bootfiles/misc.img
+
+endif
