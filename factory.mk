@@ -106,3 +106,7 @@ endif
 
 .PHONY: aml_upgrade
 aml_upgrade: $(INSTALLED_AML_UPGRADE_PACKAGE_TARGET)
+
+RADIO_FILES := $(wildcard $(FACTORY_PATH)/bootfiles/*)
+$(foreach f, $(notdir $(RADIO_FILES)), \
+    $(call add-radio-file,factory/bootfiles/$(f)))
