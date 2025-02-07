@@ -14,7 +14,14 @@
 # limitations under the License.
 #
 
+ifneq ($(filter radxa0 radxa0_car radxa0_tab,$(TARGET_DEVICE)),)
+
+LOCAL_PATH := device/radxa/radxa0
 FACTORY_PATH := device/radxa/radxa0/factory
+
+RADIO_FILES := $(wildcard $(FACTORY_PATH)/bootfiles/*)
+$(foreach f, $(notdir $(RADIO_FILES)), \
+    $(call add-radio-file,factory/bootfiles/$(f)))
 
 PRODUCT_INSTALL_OUT := $(PRODUCT_OUT)/aml_install
 PRODUCT_UPGRADE_OUT := $(PRODUCT_OUT)/aml_upgrade
@@ -79,6 +86,14 @@ endif
 .PHONY: aml_install
 aml_install: $(INSTALLED_AML_INSTALL_PACKAGE_TARGET)
 
+BUILT_TARGET_FILES_ZIPROOT := $(call intermediates-dir-for,PACKAGING,target_files)/$(TARGET_PRODUCT)-target_files
+$(BUILT_TARGET_FILES_ZIPROOT).zip: $(BUILT_TARGET_FILES_ZIPROOT)/IMAGES/aml_install_package.img
+
+$(BUILT_TARGET_FILES_ZIPROOT)/IMAGES/aml_install_package.img: $(BUILT_TARGET_FILES_ZIPROOT).zip.list $(PRODUCT_OUT)/aml_install_package.img
+	@mkdir -p $(dir $@)
+	@cp $(PRODUCT_OUT)/aml_install_package.img $@
+	@echo $@ >> $(BUILT_TARGET_FILES_ZIPROOT).zip.list
+
 INSTALLED_RADIOIMAGE_TARGET += $(INSTALLED_AML_INSTALL_PACKAGE_TARGET)
 
 $(INSTALLED_AML_UPGRADE_PACKAGE_TARGET): $(addprefix $(PRODUCT_OUT)/,$(UPGRADE_IMAGES)) $(ACP) $(AML_IMAGE_TOOL)
@@ -106,3 +121,5 @@ endif
 
 .PHONY: aml_upgrade
 aml_upgrade: $(INSTALLED_AML_UPGRADE_PACKAGE_TARGET)
+
+endif
