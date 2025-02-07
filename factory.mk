@@ -106,3 +106,8 @@ endif
 
 .PHONY: aml_upgrade
 aml_upgrade: $(INSTALLED_AML_UPGRADE_PACKAGE_TARGET)
+
+INSTALLED_RADIOIMAGE_TARGET += $(FACTORY_PATH)/bootfiles/bootloader.img
+INSTALLED_RADIOIMAGE_TARGET += $(FACTORY_PATH)/bootfiles/bootloader-console.img
+INSTALLED_RADIOIMAGE_TARGET += $(FACTORY_PATH)/bootfiles/bootloader-recovery.img
+INSTALLED_RADIOIMAGE_TARGET += $(FACTORY_PATH)/bootfiles/misc.img
