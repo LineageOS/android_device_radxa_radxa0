@@ -14,6 +14,8 @@
 # limitations under the License.
 #
 
+ifneq ($(filter radxa0 radxa0_car radxa0_tab,$(TARGET_DEVICE)),)
+
 FACTORY_PATH := device/radxa/radxa0/factory
 
 PRODUCT_INSTALL_OUT := $(PRODUCT_OUT)/aml_install
@@ -110,3 +112,5 @@ aml_upgrade: $(INSTALLED_AML_UPGRADE_PACKAGE_TARGET)
 RADIO_FILES := $(wildcard $(FACTORY_PATH)/bootfiles/*)
 $(foreach f, $(notdir $(RADIO_FILES)), \
     $(call add-radio-file,factory/bootfiles/$(f)))
+
+endif
