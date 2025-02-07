@@ -14,6 +14,8 @@
 # limitations under the License.
 #
 
+ifneq ($(filter radxa0 radxa0_car radxa0_tab,$(TARGET_DEVICE)),)
+
 FACTORY_PATH := device/radxa/radxa0/factory
 
 PRODUCT_INSTALL_OUT := $(PRODUCT_OUT)/aml_install
