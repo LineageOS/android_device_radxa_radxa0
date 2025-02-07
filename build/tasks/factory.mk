@@ -14,7 +14,14 @@
 # limitations under the License.
 #
 
+ifneq ($(filter radxa0 radxa0_car radxa0_tab,$(TARGET_DEVICE)),)
+
 FACTORY_PATH := device/radxa/radxa0/factory
+
+INSTALLED_RADIOIMAGE_TARGET += $(FACTORY_PATH)/bootfiles/bootloader.img
+INSTALLED_RADIOIMAGE_TARGET += $(FACTORY_PATH)/bootfiles/bootloader-console.img
+INSTALLED_RADIOIMAGE_TARGET += $(FACTORY_PATH)/bootfiles/bootloader-recovery.img
+INSTALLED_RADIOIMAGE_TARGET += $(FACTORY_PATH)/bootfiles/misc.img
 
 PRODUCT_INSTALL_OUT := $(PRODUCT_OUT)/aml_install
 PRODUCT_UPGRADE_OUT := $(PRODUCT_OUT)/aml_upgrade
@@ -71,7 +78,7 @@ endif
 	$(hide) $(call aml-copy-install-file, $(PRODUCT_OUT)/dtbo.img)
 	$(hide) $(call aml-copy-install-file, $(PRODUCT_OUT)/super_empty.img, super.img)
 	$(hide) $(call aml-copy-install-file, $(PRODUCT_OUT)/vbmeta.img)
-	$(hide) $(call aml-copy-install-file, $(PRODUCT_OUT)/misc.img)
+	$(hide) $(call aml-copy-install-file, $(FACTORY_PATH)/bootfiles/misc.img)
 	$(hide) $(AML_IMAGE_TOOL) -r  $(PRODUCT_INSTALL_OUT)/image.cfg $(PRODUCT_INSTALL_OUT)/ $@
 	$(hide) rm -rf $(PRODUCT_INSTALL_OUT)
 	$(hide) echo " $@ created"
@@ -107,7 +114,4 @@ endif
 .PHONY: aml_upgrade
 aml_upgrade: $(INSTALLED_AML_UPGRADE_PACKAGE_TARGET)
 
-INSTALLED_RADIOIMAGE_TARGET += $(FACTORY_PATH)/bootfiles/bootloader.img
-INSTALLED_RADIOIMAGE_TARGET += $(FACTORY_PATH)/bootfiles/bootloader-console.img
-INSTALLED_RADIOIMAGE_TARGET += $(FACTORY_PATH)/bootfiles/bootloader-recovery.img
-INSTALLED_RADIOIMAGE_TARGET += $(FACTORY_PATH)/bootfiles/misc.img
+endif
