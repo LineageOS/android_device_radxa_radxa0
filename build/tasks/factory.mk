@@ -1,5 +1,3 @@
-<<<<<<< PATCH SET (557191 radxa0: Kill Android.mk)
-=======
 #
 # Copyright (C) 2021-2023 The LineageOS Project
 #
@@ -15,6 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
+ifneq ($(filter radxa0 radxa0_car radxa0_tab,$(TARGET_DEVICE)),)
 
 FACTORY_PATH := device/radxa/radxa0/factory
 
@@ -109,8 +109,8 @@ endif
 .PHONY: aml_upgrade
 aml_upgrade: $(INSTALLED_AML_UPGRADE_PACKAGE_TARGET)
 
-INSTALLED_RADIOIMAGE_TARGET += $(FACTORY_PATH)/bootfiles/bootloader.img
-INSTALLED_RADIOIMAGE_TARGET += $(FACTORY_PATH)/bootfiles/bootloader-console.img
-INSTALLED_RADIOIMAGE_TARGET += $(FACTORY_PATH)/bootfiles/bootloader-recovery.img
-INSTALLED_RADIOIMAGE_TARGET += $(FACTORY_PATH)/bootfiles/misc.img
->>>>>>> BASE      (afd1e9 radxa0: Move radio files declare to factory.mk)
+RADIO_FILES := $(wildcard $(FACTORY_PATH)/bootfiles/*)
+$(foreach f, $(notdir $(RADIO_FILES)), \
+    $(call add-radio-file,factory/bootfiles/$(f)))
+
+endif
