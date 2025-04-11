@@ -97,9 +97,9 @@ INSTALLED_RADIOIMAGE_TARGET += $(INSTALLED_AML_INSTALL_PACKAGE_TARGET)
 $(INSTALLED_AML_UPGRADE_PACKAGE_TARGET): $(addprefix $(PRODUCT_OUT)/,$(UPGRADE_IMAGES)) $(ACP) $(AML_IMAGE_TOOL)
 	$(hide) mkdir -p $(PRODUCT_UPGRADE_OUT)
 ifeq ($(WITH_CONSOLE_BL),true)
-	$(hide) $(call aml-copy-install-file, $(FACTORY_PATH)/bootfiles/bootloader-console.img, u-boot.bin)
+	$(hide) $(call aml-copy-upgrade-file, $(FACTORY_PATH)/bootfiles/bootloader-console.img, u-boot.bin)
 else
-	$(hide) $(call aml-copy-install-file, $(FACTORY_PATH)/bootfiles/bootloader.img, u-boot.bin)
+	$(hide) $(call aml-copy-upgrade-file, $(FACTORY_PATH)/bootfiles/bootloader.img, u-boot.bin)
 endif
 	$(hide) $(call aml-copy-upgrade-file, $(PRODUCT_OUT)/logo.img)
 	$(hide) $(call aml-copy-upgrade-file, $(FACTORY_PATH)/aml_sdc_burn.ini)
