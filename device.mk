@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2021-2024 The LineageOS Project
+# Copyright (C) 2021-2025 The LineageOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -8,6 +8,9 @@
 PRODUCT_PACKAGES += \
     RadxaZeroBluetoothOverlay \
     libbt-vendor
+
+$(call soong_config_set,brcm_libbt,bdroid_buildcfg_include_dir,$(LOCAL_PATH)/bluetooth/include)
+$(call soong_config_set,brcm_libbt,custom_bt_config,//$(LOCAL_PATH):vnd_radxa0.txt)
 
 ## Bluetooth firmware
 include kernel/amlogic/kernel-modules/dhd-driver/firmware/bluetooth/bluetooth.mk
@@ -22,6 +25,11 @@ PRODUCT_COPY_FILES += \
 
 ## TEE
 TARGET_HAS_TEE := false
+
+## Soong Namespaces
+PRODUCT_SOONG_NAMESPACES += \
+    $(LOCAL_PATH) \
+    hardware/broadcom/libbt
 
 ## Wi-Fi firmware
 include kernel/amlogic/kernel-modules/dhd-driver/firmware/wifi/wifi.mk
