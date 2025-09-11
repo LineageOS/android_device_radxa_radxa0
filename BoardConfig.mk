@@ -7,10 +7,9 @@
 DEVICE_PATH := device/radxa/radxa0
 
 ## Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth/include
-BOARD_CUSTOM_BT_CONFIG := $(DEVICE_PATH)/bluetooth/vnd_radxa0.txt
 BOARD_HAVE_BLUETOOTH := true
-BOARD_HAVE_BLUETOOTH_BCM := true
+$(call soong_config_set,brcm_libbt,bdroid_buildcfg_include_dir,$(DEVICE_PATH)/bluetooth/include)
+$(call soong_config_set,brcm_libbt,custom_bt_config,//device/radxa/radxa0:vnd_radxa0.txt)
 
 ## Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := radxa0
