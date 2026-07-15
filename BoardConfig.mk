@@ -13,10 +13,15 @@ TARGET_BOOTLOADER_BOARD_NAME := radxa0
 
 ## DTB
 TARGET_DTB_NAME := g12a_s905y2_radxa0
+TARGET_DTBO_NAME := android_overlay_dt
+BOARD_KERNEL_SEPARATED_DTBO := true
 
-## Kernel modules
-TARGET_KERNEL_EXT_MODULES := \
-    dhd-driver/bcmdhd.101.10.591.x
+## Kernel
+TARGET_KERNEL_PLATFORM_TARGET := radxa0
+TARGET_KERNEL_SOURCE := vendor/radxa/radxa0-build
+BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)/vendor_dlkm.modules.load))
+BOOT_KERNEL_MODULES := $(strip $(shell cat $(DEVICE_PATH)/vendor_boot.modules.load))
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(BOOT_KERNEL_MODULES)
 
 ## Partitions
 BOARD_SUPER_PARTITION_SIZE := 2084569088
