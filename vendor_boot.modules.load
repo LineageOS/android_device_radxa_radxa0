@@ -6,3 +6,4 @@ amlogic-usb.ko
 amlogic-irblaster.ko
 amlogic-phy-debug.ko
 amlogic-inphy.ko
+dwc_otg.ko
