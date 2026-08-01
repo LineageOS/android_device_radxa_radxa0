@@ -1,5 +1,9 @@
 ## All blobs from this list, unless pinned and noted as otherwise,
 ## are from onn/jarvis/SNA:14/URO4.260304.011.B1/15051976:user/release-keys.
 
+## Display
+vendor/etc/mesondisplay.cfg
+vendor/etc/mesondisplay.cfg:recovery/root/system/etc/mesondisplay.cfg
+
 ## Graphics
 vendor/lib/egl/libGLES_mali.so;SYMLINK=vendor/lib/hw/vulkan.amlogic.so
