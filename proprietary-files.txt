@@ -1,5 +1,9 @@
 ## All blobs from this list, unless pinned and noted as otherwise,
 ## are from adt3-user 13 TTT1.230205.001 9565391 release-keys.
 
+## Display
+vendor/etc/mesondisplay.cfg
+vendor/etc/mesondisplay.cfg:recovery/root/system/etc/mesondisplay.cfg
+
 ## Graphics - from onn/jarvis/SNA:14/URO4.260304.011.B1/15051976:user/release-keys
 vendor/lib/egl/libGLES_mali.so;SYMLINK=vendor/lib/hw/vulkan.amlogic.so|789cc44980444d009cceb61d3127c5ab9495aa42|acf297b9fb9064a916ee33924563329eff281824
