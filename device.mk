@@ -14,6 +14,11 @@ $(call soong_config_set,brcm_libbt,custom_bt_config,//$(LOCAL_PATH):vnd_radxa0.t
 ## Bluetooth firmware
 include hardware/broadcom/libbt/firmware/bluetooth.mk
 
+## Display
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/display/mesondisplay.cfg:$(TARGET_COPY_OUT_RECOVERY)/root/system/etc/mesondisplay.cfg \
+    $(LOCAL_PATH)/configs/display/mesondisplay.cfg:$(TARGET_COPY_OUT_VENDOR)/etc/mesondisplay.cfg
+
 ## Factory
 PRODUCT_HOST_PACKAGES += \
     aml_image_packer
