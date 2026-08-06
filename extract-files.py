@@ -4,20 +4,26 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+from extract_utils.fixups_blob import (
+    blob_fixup,
+    blob_fixups_user_type,
+)
+
 from extract_utils.main import (
     ExtractUtils,
     ExtractUtilsModule,
 )
 
-namespace_imports = [
-    'vendor/amlogic/g12-common',
-]
+blob_fixups: blob_fixups_user_type = {
+    'vendor/lib/egl/libGLES_mali.so': blob_fixup()
+        .replace_needed('android.hardware.graphics.common-V4-ndk.so', 'android.hardware.graphics.common-V7-ndk.so'),
+}  # fmt: skip
 
 module = ExtractUtilsModule(
     'radxa0',
     'radxa',
     add_firmware_proprietary_file=True,
-    namespace_imports=namespace_imports,
+    blob_fixups=blob_fixups,
 )
 
 if __name__ == '__main__':
