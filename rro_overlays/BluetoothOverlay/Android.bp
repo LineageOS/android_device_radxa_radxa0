@@ -2,8 +2,9 @@
 // SPDX-FileCopyrightText: The LineageOS Project
 // SPDX-License-Identifier: Apache-2.0
 //
+
 runtime_resource_overlay {
-    name: "RadxaZeroBluetoothOverlay",
+    name: "BluetoothOverlayTarget",
     resource_dirs: ["res"],
     sdk_version: "current",
     proprietary: true
