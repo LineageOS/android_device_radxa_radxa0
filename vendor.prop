@@ -1,8 +1,3 @@
-#
-# SPDX-FileCopyrightText: The LineageOS Project
-# SPDX-License-Identifier: Apache-2.0
-#
-
 ## Bluetooth
 bluetooth.device.default_name=Radxa Zero
 bluetooth.profile.hfp.ag.enabled=false
