@@ -4,8 +4,8 @@
     "target_path": "device/amlogic/g12-common"
   },
   {
-    "repository": "android_hardware_amlogic_kernel-modules_dhd-driver",
-    "target_path": "kernel/amlogic/kernel-modules/dhd-driver"
+    "repository": "android_kernel_amlogic_dhd-driver",
+    "target_path": "kernel/platform/kernel-5.15/vendor/amlogic/dhd-driver"
   },
   {
     "repository": "android_hardware_amlogic_u-boot",
@@ -14,5 +14,9 @@
   {
     "repository": "android_hardware_amlogic_u-boot_build",
     "target_path": "kernel/amlogic/u-boot_build"
+  },
+  {
+    "repository": "android_kernel_radxa_radxa0-build",
+    "target_path": "kernel/platform/kernel-5.15/vendor/radxa/radxa0-build"
   }
 ]
