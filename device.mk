@@ -12,7 +12,7 @@ $(call soong_config_set,brcm_libbt,bdroid_buildcfg_include_dir,$(LOCAL_PATH)/blu
 $(call soong_config_set,brcm_libbt,custom_bt_config,//$(LOCAL_PATH):vnd_radxa0.txt)
 
 ## Bluetooth firmware
-include kernel/amlogic/kernel-modules/dhd-driver/firmware/bluetooth/bluetooth.mk
+include hardware/broadcom/libbt/firmware/bluetooth.mk
 
 ## Factory
 PRODUCT_HOST_PACKAGES += \
@@ -31,7 +31,8 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/broadcom/libbt
 
 ## Wi-Fi firmware
-include kernel/amlogic/kernel-modules/dhd-driver/firmware/wifi/wifi.mk
+WIFI_FIRMWARE_OUT_PATH := $(TARGET_COPY_OUT_VENDOR)/lib/firmware/wifi
+include hardware/broadcom/wlan/bcmdhd/firmware/wifi.mk
 
 ## Inherit from the common tree product makefile
 $(call inherit-product, device/amlogic/g12-common/g12.mk)
