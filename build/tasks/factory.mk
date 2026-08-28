@@ -7,10 +7,11 @@ ifneq ($(filter radxa0 radxa0_car radxa0_tab,$(TARGET_DEVICE)),)
 
 LOCAL_PATH := device/radxa/radxa0
 FACTORY_PATH := device/radxa/radxa0/factory
+VENDOR_PATH := vendor/radxa/radxa0
 
-RADIO_FILES := $(wildcard $(FACTORY_PATH)/bootfiles/*)
+RADIO_FILES := $(wildcard $(VENDOR_PATH)/radio/*)
 $(foreach f, $(notdir $(RADIO_FILES)), \
-    $(call add-radio-file,factory/bootfiles/$(f)))
+    $(call add-radio-file,../../../$(VENDOR_PATH)/radio/$(f)))
 
 PRODUCT_INSTALL_OUT := $(PRODUCT_OUT)/aml_install
 PRODUCT_UPGRADE_OUT := $(PRODUCT_OUT)/aml_upgrade
@@ -45,15 +46,16 @@ INSTALL_IMAGES := \
     vbmeta.img \
     super.img \
     super_empty.img \
-    logo.img \
-    misc.img
+    logo.img
 
 $(INSTALLED_AML_INSTALL_PACKAGE_TARGET): $(addprefix $(PRODUCT_OUT)/,$(INSTALL_IMAGES)) $(ACP) $(AML_IMAGE_TOOL)
 	$(hide) mkdir -p $(PRODUCT_INSTALL_OUT)
 ifeq ($(WITH_CONSOLE_BL),true)
-	$(hide) $(call aml-copy-install-file, $(FACTORY_PATH)/bootfiles/bootloader-console.img, u-boot.bin)
+	$(hide) $(call aml-copy-install-file, $(VENDOR_PATH)/radio/bootloader-console.img, u-boot.bin)
+else ifeq ($(WITH_RECOVERY_BL),true)
+	$(hide) $(call aml-copy-install-file, $(VENDOR_PATH)/radio/bootloader-recovery.img, u-boot.bin)
 else
-	$(hide) $(call aml-copy-install-file, $(FACTORY_PATH)/bootfiles/bootloader.img, u-boot.bin)
+	$(hide) $(call aml-copy-install-file, $(VENDOR_PATH)/radio/bootloader.img, u-boot.bin)
 endif
 	$(hide) $(call aml-copy-install-file, $(PRODUCT_OUT)/logo.img)
 	$(hide) $(call aml-copy-install-file, $(FACTORY_PATH)/aml_sdc_burn.ini)
@@ -65,7 +67,7 @@ endif
 	$(hide) $(call aml-copy-install-file, $(PRODUCT_OUT)/dtbo.img)
 	$(hide) $(call aml-copy-install-file, $(PRODUCT_OUT)/super_empty.img, super.img)
 	$(hide) $(call aml-copy-install-file, $(PRODUCT_OUT)/vbmeta.img)
-	$(hide) $(call aml-copy-install-file, $(PRODUCT_OUT)/misc.img)
+	$(hide) $(call aml-copy-install-file, $(VENDOR_PATH)/radio/misc.img)
 	$(hide) $(AML_IMAGE_TOOL) -r  $(PRODUCT_INSTALL_OUT)/image.cfg $(PRODUCT_INSTALL_OUT)/ $@
 	$(hide) rm -rf $(PRODUCT_INSTALL_OUT)
 	$(hide) echo " $@ created"
@@ -86,9 +88,11 @@ INSTALLED_RADIOIMAGE_TARGET += $(INSTALLED_AML_INSTALL_PACKAGE_TARGET)
 $(INSTALLED_AML_UPGRADE_PACKAGE_TARGET): $(addprefix $(PRODUCT_OUT)/,$(UPGRADE_IMAGES)) $(ACP) $(AML_IMAGE_TOOL)
 	$(hide) mkdir -p $(PRODUCT_UPGRADE_OUT)
 ifeq ($(WITH_CONSOLE_BL),true)
-	$(hide) $(call aml-copy-upgrade-file, $(FACTORY_PATH)/bootfiles/bootloader-console.img, u-boot.bin)
+ 	$(hide) $(call aml-copy-install-file, $(VENDOR_PATH)/radio/bootloader-console.img, u-boot.bin)
+else ifeq ($(WITH_RECOVERY_BL),true)
+	$(hide) $(call aml-copy-install-file, $(VENDOR_PATH)/radio/bootloader-recovery.img, u-boot.bin)
 else
-	$(hide) $(call aml-copy-upgrade-file, $(FACTORY_PATH)/bootfiles/bootloader.img, u-boot.bin)
+	$(hide) $(call aml-copy-install-file, $(VENDOR_PATH)/radio/bootloader.img, u-boot.bin)
 endif
 	$(hide) $(call aml-copy-upgrade-file, $(PRODUCT_OUT)/logo.img)
 	$(hide) $(call aml-copy-upgrade-file, $(FACTORY_PATH)/aml_sdc_burn.ini)
