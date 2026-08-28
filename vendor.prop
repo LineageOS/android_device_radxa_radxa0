@@ -12,4 +12,4 @@ vendor.media.support.dolbyvision=false
 ro.soc.model=AMLS905Y2
 
 ## Wi-Fi
-vendor.bcm_wifi=bcm
+vendor.wifi_name=bcm
