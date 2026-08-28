@@ -16,6 +16,7 @@ namespace_imports = [
 module = ExtractUtilsModule(
     'radxa0',
     'radxa',
+    add_firmware_proprietary_file=True,
     namespace_imports=namespace_imports,
 )
 
