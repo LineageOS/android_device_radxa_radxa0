@@ -1,0 +1,5 @@
+# Firmware - built from https://github.com/Stricted/deadpool_u-boot using https://github.com/Stricted/deadpool_u-boot_build.
+
+bootloader.img
+bootloader-console.img
+bootloader-recovery.img
