@@ -12,7 +12,7 @@ from extract_utils.main import (
 module = ExtractUtilsModule(
     'radxa0',
     'radxa',
-    skip_main_proprietary_file=True,
+    add_firmware_proprietary_file=True,
 )
 
 if __name__ == '__main__':
