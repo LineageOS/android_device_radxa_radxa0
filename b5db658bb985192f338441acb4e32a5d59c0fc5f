@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "27b090a7_7ce80ecf",
+        "filename": "extract-files.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2026-08-28T18:34:44Z",
+      "side": 1,
+      "message": "Is this needed?",
+      "revId": "b5db658bb985192f338441acb4e32a5d59c0fc5f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
