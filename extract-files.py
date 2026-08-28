@@ -11,11 +11,15 @@ from extract_utils.main import (
     ExtractUtilsModule,
 )
 
+namespace_imports = [
+    'vendor/amlogic/g12-common',
+]
+
 module = ExtractUtilsModule(
     'radxa0',
     'radxa',
     add_firmware_proprietary_file=True,
-    skip_main_proprietary_file=True,
+    namespace_imports=namespace_imports,
 )
 
 if __name__ == '__main__':
