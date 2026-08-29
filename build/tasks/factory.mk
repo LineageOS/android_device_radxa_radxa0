@@ -52,6 +52,8 @@ $(INSTALLED_AML_INSTALL_PACKAGE_TARGET): $(addprefix $(PRODUCT_OUT)/,$(INSTALL_I
 	$(hide) mkdir -p $(PRODUCT_INSTALL_OUT)
 ifeq ($(WITH_CONSOLE_BL),true)
 	$(hide) $(call aml-copy-install-file, $(FACTORY_PATH)/bootfiles/bootloader-console.img, u-boot.bin)
+else ifeq ($(WITH_RECOVERY_BL),true)
+	$(hide) $(call aml-copy-install-file, $(FACTORY_PATH)/bootfiles/bootloader-recovery.img, u-boot.bin)
 else
 	$(hide) $(call aml-copy-install-file, $(FACTORY_PATH)/bootfiles/bootloader.img, u-boot.bin)
 endif
@@ -87,6 +89,8 @@ $(INSTALLED_AML_UPGRADE_PACKAGE_TARGET): $(addprefix $(PRODUCT_OUT)/,$(UPGRADE_I
 	$(hide) mkdir -p $(PRODUCT_UPGRADE_OUT)
 ifeq ($(WITH_CONSOLE_BL),true)
 	$(hide) $(call aml-copy-upgrade-file, $(FACTORY_PATH)/bootfiles/bootloader-console.img, u-boot.bin)
+else ifeq ($(WITH_RECOVERY_BL),true)
+	$(hide) $(call aml-copy-install-file, $(FACTORY_PATH)/bootfiles/bootloader-recovery.img, u-boot.bin)
 else
 	$(hide) $(call aml-copy-upgrade-file, $(FACTORY_PATH)/bootfiles/bootloader.img, u-boot.bin)
 endif
