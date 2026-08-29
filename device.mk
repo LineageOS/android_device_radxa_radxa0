@@ -18,9 +18,9 @@ include kernel/amlogic/kernel-modules/dhd-driver/firmware/bluetooth/bluetooth.mk
 PRODUCT_HOST_PACKAGES += \
     aml_image_packer
 
-## Init-Files
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/init-files/init.amlogic.wifi_buildin.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.amlogic.wifi_buildin.rc
+## Init
+PRODUCT_PACKAGES += \
+    init.amlogic.wifi_buildin.rc
 
 ## TEE
 TARGET_HAS_TEE := false
