@@ -24,6 +24,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f5aae1ad_1d59e121",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2026-08-29T04:05:37Z",
+      "side": 1,
+      "message": "I1c119c1a60ae27e57459e0d9183b35c60215dde0",
+      "parentUuid": "ce8a2e45_0717bac9",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 43
+      },
+      "revId": "21919e6a02bbb67a1b1d704c7b6d56c28b043360",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6a4ccf72_fe73c2d7",
@@ -47,6 +71,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3bd70c77_2747330d",
+        "filename": "build/tasks/factory.mk",
+        "patchSetId": 6
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2026-08-29T04:05:37Z",
+      "side": 1,
+      "message": "Not true, `add-radio-file` makes assumptions based on LOCAL_PATH. Note that I had to do `$(call add-radio-file,../../../$(VENDOR_PATH)/radio/$(f)))`",
+      "parentUuid": "6a4ccf72_fe73c2d7",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 33
+      },
+      "revId": "21919e6a02bbb67a1b1d704c7b6d56c28b043360",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5a019c41_3ce4bc14",
@@ -60,6 +108,24 @@
       "writtenOn": "2026-08-29T02:10:21Z",
       "side": 1,
       "message": "Don\u0027t you need to add misc.img here too?",
+      "revId": "21919e6a02bbb67a1b1d704c7b6d56c28b043360",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f379a77f_0d4935c1",
+        "filename": "proprietary-firmware.txt",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2026-08-29T04:05:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a019c41_3ce4bc14",
       "revId": "21919e6a02bbb67a1b1d704c7b6d56c28b043360",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
