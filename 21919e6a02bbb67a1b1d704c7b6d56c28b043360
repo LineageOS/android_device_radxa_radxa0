@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ce8a2e45_0717bac9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2026-08-29T02:10:21Z",
+      "side": 1,
+      "message": "Can you move this to a separate change prior to the current one?",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 43
+      },
+      "revId": "21919e6a02bbb67a1b1d704c7b6d56c28b043360",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6a4ccf72_fe73c2d7",
+        "filename": "build/tasks/factory.mk",
+        "patchSetId": 6
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2026-08-29T02:10:21Z",
+      "side": 1,
+      "message": "Not used anymore, remove.",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 33
+      },
+      "revId": "21919e6a02bbb67a1b1d704c7b6d56c28b043360",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5a019c41_3ce4bc14",
+        "filename": "proprietary-firmware.txt",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2026-08-29T02:10:21Z",
+      "side": 1,
+      "message": "Don\u0027t you need to add misc.img here too?",
+      "revId": "21919e6a02bbb67a1b1d704c7b6d56c28b043360",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
