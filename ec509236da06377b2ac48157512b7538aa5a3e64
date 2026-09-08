@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c2d542b7_022dd58b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2026-09-08T22:05:08Z",
+      "side": 1,
+      "message": "androidboot.serialno\u003d was missing in cmdline, due to an u-boot issue.",
+      "revId": "ec509236da06377b2ac48157512b7538aa5a3e64",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
