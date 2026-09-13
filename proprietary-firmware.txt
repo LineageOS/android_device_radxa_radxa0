@@ -1,5 +1,6 @@
-# Firmware - built from https://github.com/Stricted/deadpool_u-boot using https://github.com/Stricted/deadpool_u-boot_build.
+# Firmware
 
+# U-boot built from hardware/amlogic/u-boot
 bootloader.img
 
 # Raw image with BCB set to `boot-recovery`
