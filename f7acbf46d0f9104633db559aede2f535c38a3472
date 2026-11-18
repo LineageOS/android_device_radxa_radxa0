@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f2365d1f_87d5af35",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 15060
+      },
+      "writtenOn": "2026-11-18T03:34:43Z",
+      "side": 1,
+      "message": "Alternative to https://review.lineageos.org/c/LineageOS/android_device_amlogic_g12-common/+/514074?usp\u003dsearch. Abandon if merging it instead",
+      "revId": "f7acbf46d0f9104633db559aede2f535c38a3472",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
