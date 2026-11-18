@@ -1,0 +1,13 @@
+# fastbootd refuses writes without a verified-boot state from u-boot, so super is flashed from u-boot
+version 1
+flash boot
+flash dtbo
+flash dtb
+flash logo
+flash bootloader
+flash recovery
+flash --apply-vbmeta vbmeta
+flash super
+if-wipe erase cache
+if-wipe erase data
+if-wipe erase metadata

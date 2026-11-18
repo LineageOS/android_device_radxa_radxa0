@@ -16,6 +16,9 @@ TARGET_DTB_NAME := g12a_s905y2_radxa0
 TARGET_DTBO_NAME := android_overlay_dt
 BOARD_KERNEL_SEPARATED_DTBO := true
 
+## Fastboot
+TARGET_BOARD_FASTBOOT_INFO_FILE := $(DEVICE_PATH)/fastboot-info.txt
+
 ## Kernel
 TARGET_KERNEL_PLATFORM_TARGET := radxa0
 TARGET_KERNEL_SOURCE := vendor/radxa/radxa0-build
