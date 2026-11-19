@@ -52,6 +52,23 @@
       "parentUuid": "1877cc3f_03fa18f5",
       "revId": "f7acbf46d0f9104633db559aede2f535c38a3472",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c92ca1a3_cd44db56",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2026-11-19T00:12:45Z",
+      "side": 1,
+      "message": "Flashing from fastbootd was working fine and now it\u0027s just broken after 514074.",
+      "revId": "f7acbf46d0f9104633db559aede2f535c38a3472",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ],
   "submitRequirementResults": [
