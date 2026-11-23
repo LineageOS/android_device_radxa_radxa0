@@ -5,7 +5,6 @@
 
 ## Bluetooth
 PRODUCT_PACKAGES += \
-    BluetoothOverlayTarget \
     libbt-vendor
 
 $(call soong_config_set,brcm_libbt,bdroid_buildcfg_include_dir,$(LOCAL_PATH)/bluetooth/include)
